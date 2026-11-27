@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakuma Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Kakuma Connect</h1>
+    <p>Connecting Kakuma to the World.</p>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#freelancers">Freelancers</a>
+        <a href="#contact">Contact</a>
+        <a href="#cart">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
+
+<main id="home">
+
+    <section>
+        <h2>Welcome to Kakuma Connect!</h2>
+        <p>
+            Buy products, sell your goods and discover
+            professional opportunities in Kakuma.
+        </p>
+
+        <button onclick="location.href='#products'">
+            Explore Products
+        </button>
+
+        <button onclick="location.href='#freelancers'">
+            Find Freelancers
+        </button>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <p>Discover products available from local sellers.</p>
+
+        <label for="categoryFilter">Choose a category:</label>
+
+        <select id="categoryFilter">
+            <option value="all">All Products</option>
+            <option value="clothing">Clothing</option>
+            <option value="electronics">Electronics</option>
+            <option value="food">Food Products</option>
+        </select>
+
+        <div class="search-box">
+            <input type="text" id="productSearch"
+                placeholder="Search for products...">
+            <button type="button">Search</button>
+            <button type="button" id="clearSearch">Clear</button>
+        </div>
+
+        <div class="product-card" data-price="1000" data-category="clothing">
+            <h3>Clothing</h3>
+            <img src="images/clothes.png" alt="Clothing products">
+            <p>Beautiful clothes and fashion items.</p>
+            <p>Price: KSh 1,000</p>
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="remove-from-cart">Remove from Cart</button>
+        </div>
+
+        <div class="product-card" data-price="2500" data-category="electronics">
+            <h3>Electronics</h3>
+            <img src="images/electronics.png" alt="Electronics products">
+            <p>Phones and electronic accessories.</p>
+            <p>Price: KSh 2,500</p>
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="remove-from-cart">Remove from Cart</button>
+        </div>
+
+        <div class="product-card" data-price="500" data-category="food">
+            <h3>Food Products</h3>
+            <img src="images/food.png" alt="Food products">
+            <p>Fresh food products from local sellers.</p>
+            <p>Price: KSh 500</p>
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="remove-from-cart">Remove from Cart</button>
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>My Shopping Cart</h2>
+        <p>Total items: <span id="totalItems">0</span></p>
+        <p>Total Price: KSh <span id="totalPrice">0</span></p>
+
+        <button type="button" id="checkoutButton">
+            Proceed to Checkout
+        </button>
+
+        <div id="checkoutForm" style="display:none;">
+            <h3>Customer Details</h3>
+
+            <form id="orderForm">
+                <label for="customerName">Full Name:</label>
+                <input type="text" id="customerName" required>
+
+                <label for="customerPhone">Phone Number:</label>
+                <input type="tel" id="customerPhone" required>
+
+                <label for="customerLocation">Delivery Location:</label>
+                <input type="text" id="customerLocation" required>
+
+                <button type="submit" id="placeOrderButton">
+                    Place Order
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="freelancers">
+        <h2>Find Freelancers</h2>
+        <p>Connect with talented people offering professional services.</p>
+
+        <div class="freelancer-container">
+
+            <div class="freelancer-card">
+                <h3>Graphic Designer</h3>
+                <p>Logo Design, Posters and Flyers.</p>
+                <a href="#contact" class="freelancer-button">Contact Freelancer</a>
+            </div>
+
+            <div class="freelancer-card">
+                <h3>Digital Marketer</h3>
+                <p>Social Media and Content Marketing.</p>
+                <a href="#contact" class="freelancer-button">Contact Freelancer</a>
+            </div>
+
+            <div class="freelancer-card">
+                <h3>Virtual Assistant</h3>
+                <p>Data Entry, Email and Administration.</p>
+                <a href="#contact" class="freelancer-button">Contact Freelancer</a>
+            </div>
+
+            <div class="freelancer-card">
+                <h3>Content Creator</h3>
+                <p>Writing, Blogging and Social Media Content.</p>
+                <a href="#contact" class="freelancer-button">Contact Freelancer</a>
+            </div>
+
+        </div>
+
+        <div class="freelancer-registration">
+            <h3>Register as a Freelancer</h3>
+            <p>Showcase your skills and connect with clients.</p>
+
+            <form id="freelancerForm">
+                <label for="freelancerName">Full Name:</label>
+                <input type="text" id="freelancerName" required>
+
+                <label for="freelancerEmail">Email Address:</label>
+                <input type="email" id="freelancerEmail" required>
+
+                <label for="freelancerPhone">Phone Number:</label>
+                <input type="tel" id="freelancerPhone" required>
+
+                <label for="freelancerSkill">Professional Skills:</label>
+                <input type="text" id="freelancerSkill" required>
+
+                <label for="freelancerDescription">Describe Your Services:</label>
+                <textarea id="freelancerDescription" required></textarea>
+
+                <button type="submit">Register Now</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have a question? We would love to hear from you.</p>
+
+        <form id="contactForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <h3>Kakuma Connect</h3>
+    <p>Connecting Kakuma to the World.</p>
+    <p>Buy, Sell and Find Opportunities.</p>
+    <p>&copy; 2026 Kakuma Connect. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
